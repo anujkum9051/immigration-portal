@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import API_URL from "./config";
 
 // Custom SVG Icons Components
 const ShieldIcon = () => (
@@ -266,7 +267,7 @@ function App() {
 
   // Fetch dynamic data from MERN API on mount
   useEffect(() => {
-    fetch('http://localhost:5001/api/countries')
+    fetch(`${API_URL}/api/countries`)
       .then(res => {
         if (!res.ok) throw new Error('API return error')
         return res.json()
@@ -278,7 +279,7 @@ function App() {
       })
       .catch(err => console.log('Using fallback countries data:', err))
 
-    fetch('http://localhost:5001/api/services')
+    fetch(`${API_URL}/api/services`)
       .then(res => {
         if (!res.ok) throw new Error('API return error')
         return res.json()
@@ -342,7 +343,7 @@ function App() {
     setCalcStep(4)
 
     // Save assessment to MongoDB
-    fetch('http://localhost:5001/api/assessments', {
+    fetch(`${API_URL}/api/assessments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -365,7 +366,7 @@ function App() {
     e.preventDefault()
     if (bookingData.fullName && bookingData.email && bookingData.phone) {
       // POST to backend API
-      fetch('http://localhost:5001/api/bookings', {
+      fetch(`${API_URL}/api/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bookingData)
