@@ -1,131 +1,323 @@
-# TerraFlex & Flyder Immigration Portal
+# 🌍Immigration Portal
 
-A premium, highly interactive MERN (MongoDB, Express, React, Node.js) web application designed for a modern visa and immigration consultancy. The application provides dynamic relocation insights, a points-based immigration eligibility calculator, step-by-step visa timelines, and direct lawyer booking facilities.
+A premium, full-stack **MERN (MongoDB, Express.js, React.js, Node.js)** web application developed for a modern visa and immigration consultancy. The platform helps users explore immigration destinations, calculate eligibility points, learn about visa services, and book professional immigration consultations online.
 
 ---
 
-## 📁 Full File Structure
+# 🚀 Live Demo
 
-Below is the complete, detailed directory layout of the MERN project:
+### 🌐 Frontend (Live Website)
+https://immigration-portal-frontend.onrender.com
+
+### ⚙️ Backend API
+https://immigration-portal-backend-wdn2.onrender.com
+
+### ❤️ Health Check
+https://immigration-portal-backend-wdn2.onrender.com/health
+
+### 📂 GitHub Repository
+https://github.com/anujkum9051/immigration-portal
+
+---
+
+# ✨ Features
+
+- 🌎 Dynamic Immigration Destinations
+- 📊 Immigration Points Calculator
+- 🛂 Visa & Immigration Services
+- 📅 Consultation Booking System
+- 💾 MongoDB Atlas Database Integration
+- ⚡ RESTful Express API
+- 📱 Fully Responsive Modern UI
+- 🌙 Professional Dark Theme
+- 🔥 MERN Stack Architecture
+- ☁️ Fully Deployed on Render
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend
+
+- React.js
+- Vite
+- CSS3
+- JavaScript (ES6)
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+
+## Deployment
+
+- Render (Frontend)
+- Render (Backend)
+- MongoDB Atlas (Database)
+
+---
+
+# 📁 Project Structure
 
 ```text
-/Users/kunal/Desktop/new/
-├── README.md                 # Project documentation & run guides
-├── frontend/                 # React client SPA (scaffolded via Vite)
-│   ├── package.json          # Frontend packages & dev scripts
-│   ├── vite.config.js        # Vite build configurations
-│   ├── index.html            # Entry HTML document with Outfit & Inter Google Fonts
-│   ├── .gitignore            # Git exclusion settings for client build/packages
-│   ├── public/               # Static folder for shared client assets
-│   └── src/
-│       ├── App.jsx           # App entry, dynamic MERN fetches, point calculator state, testimonial slider, forms, SVGs
-│       └── index.css         # Core CSS layout rules, glassmorphism tokens, and keyframe animations
+immigration-portal/
 │
-└── backend/                  # Node.js Express server API
-    ├── package.json          # Node dependencies (Express, Mongoose, nodemon)
-    ├── server.js             # Express start script, middlewares, and API route mappings
-    ├── .env                  # Configuration variables (PORT, MONGO_URI)
+├── README.md
+│
+├── frontend/
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── index.html
+│   ├── public/
+│   └── src/
+│       ├── App.jsx
+│       ├── config.js
+│       ├── main.jsx
+│       ├── index.css
+│       └── assets/
+│
+└── backend/
+    ├── package.json
+    ├── server.js
+    ├── .env
     ├── config/
-    │   └── db.js             # Mongoose MongoDB connection pool initialization
-    ├── models/               # Mongoose Document Schemas
-    │   ├── Country.js        # Destination countries schema with sub-pathway documents
-    │   ├── Service.js        # Core immigration services details schema
-    │   ├── Assessment.js     # User points calculations log schema
-    │   └── Booking.js        # Consultation booking inquiries schema
+    │   └── db.js
+    ├── models/
+    │   ├── Assessment.js
+    │   ├── Booking.js
+    │   ├── Country.js
+    │   └── Service.js
     ├── routes/
-    │   └── api.js            # Router endpoints for DB reads/writes (POST/GET)
+    │   └── api.js
     └── scripts/
-        └── seed.js           # Populates local MongoDB collections with countries and services data
+        └── seed.js
 ```
 
 ---
 
-## 🚀 How to Run the Project
+# 🚀 Installation
 
-Follow these step-by-step instructions to get the backend, database, and frontend running locally.
+## Clone Repository
 
-### 📋 Prerequisites
-1. **Node.js**: Version 20.19.0+ or 22.12.0+ is recommended.
-2. **MongoDB**: Ensure MongoDB Community Server is installed and running locally on port `27017`.
+```bash
+git clone https://github.com/anujkum9051/immigration-portal.git
+
+cd immigration-portal
+```
 
 ---
 
-### Step 1: Install Dependencies
-Open a terminal in the root project folder `/Users/kunal/Desktop/new` and run the installations for both directories:
+## Install Backend
 
-#### Install Backend Packages:
 ```bash
 cd backend
+
 npm install
 ```
 
-#### Install Frontend Packages:
+---
+
+## Install Frontend
+
 ```bash
 cd ../frontend
+
 npm install
 ```
 
 ---
 
-### Step 2: Seed the Database
-Before running the servers, populate your local MongoDB database with the primary visa destinations and core services:
+# ⚙️ Environment Variables
+
+Create a `.env` file inside the **backend** folder.
+
+```env
+PORT=5001
+
+MONGODB_URI=your_mongodb_atlas_connection_string
+```
+
+Example
+
+```env
+PORT=5001
+
+MONGODB_URI=mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/immigration?retryWrites=true&w=majority&appName=Cluster0
+```
+
+---
+
+# 🌱 Seed Database
+
+Run
 
 ```bash
-cd ../backend
+cd backend
+
 npm run seed
 ```
-*Expected Output:*
+
+Expected Output
+
 ```text
-MongoDB Connected: 127.0.0.1
-Database cleared of existing countries & services.
-Seeded 5 countries successfully.
-Seeded 4 services successfully.
-Seeding process finished!
+MongoDB Connected
+
+Database cleared.
+
+Countries Seeded
+
+Services Seeded
+
+Done.
 ```
 
 ---
 
-### Step 3: Run the Backend API
-Start the Express server on port `5001` (to prevent conflicts with macOS AirPlay binding to port `5000`):
+# ▶️ Run Backend
 
 ```bash
+cd backend
+
 npm run dev
 ```
-*Expected Output:*
-```text
-[nodemon] starting `node server.js`
-Server running on port 5001 in production/development mode
-MongoDB Connected: 127.0.0.1
+
+Backend will start on
+
+```
+http://localhost:5001
 ```
 
 ---
 
-### Step 4: Run the Frontend Application
-Open a **new terminal window** in the root project folder, navigate to the frontend directory, and start Vite:
+# ▶️ Run Frontend
+
+Open another terminal
 
 ```bash
 cd frontend
+
 npm run dev
 ```
-*Expected Output:*
-```text
-  VITE v8.1.4  ready in 148 ms
 
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
+Open
+
 ```
-
-Open **`http://localhost:5173/`** in your browser to interact with the application.
+http://localhost:5173
+```
 
 ---
 
-## 🌐 API Reference
+# 🌐 API Endpoints
 
-All routes are prefixed with `/api` and serve/consume JSON payloads:
+## Countries
 
-| HTTP Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| **GET** | `http://localhost:5001/api/countries` | Fetch all dynamic immigration destinations from MongoDB. |
-| **GET** | `http://localhost:5001/api/services` | Fetch core consultancy services list. |
-| **POST** | `http://localhost:5001/api/assessments` | Submit and log a points calculator eligibility record. |
-| **POST** | `http://localhost:5001/api/bookings` | Submit a new consultation request card to the database. |
+```
+GET /api/countries
+```
+
+Returns all immigration destinations.
+
+---
+
+## Services
+
+```
+GET /api/services
+```
+
+Returns available immigration services.
+
+---
+
+## Assessment
+
+```
+POST /api/assessments
+```
+
+Stores eligibility calculator results.
+
+---
+
+## Book Consultation
+
+```
+POST /api/bookings
+```
+
+Stores consultation booking requests.
+
+---
+
+# 📷 Application Modules
+
+- Home Page
+- Immigration Destinations
+- Immigration Services
+- Points Calculator
+- Consultation Booking
+- Contact Information
+- MongoDB Database Storage
+
+---
+
+# ☁️ Deployment
+
+## Frontend
+
+Hosted on **Render Static Site**
+
+https://immigration-portal-frontend.onrender.com
+
+---
+
+## Backend
+
+Hosted on **Render Web Service**
+
+https://immigration-portal-backend-wdn2.onrender.com
+
+---
+
+## Database
+
+MongoDB Atlas Cloud Database
+
+---
+
+# 📌 Project Highlights
+
+- Full Stack MERN Project
+- REST API Development
+- MongoDB Atlas Integration
+- Express Backend
+- React + Vite Frontend
+- Responsive UI
+- Dynamic Data Fetching
+- Consultation Booking System
+- Immigration Eligibility Calculator
+- Render Cloud Deployment
+
+---
+
+# 👨‍💻 Author
+
+**Anuj Kumar**
+
+GitHub
+
+https://github.com/anujkum9051
+
+---
+
+# ⭐ Support
+
+If you found this project helpful, please consider giving it a ⭐ on GitHub.
+
+---
+
+# 📄 License
+
+This project is created for educational and portfolio purposes.
