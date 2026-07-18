@@ -189,7 +189,7 @@ const fallbackServicesData = [
 // Testimonials Data
 const testimonialsData = [
   {
-    quote: "TerraFlex & Flyder completely transformed our relocation experience. From assessment to flight ticket booking, their documentation assistance was flawless. We received our Canada PR in just 6 months!",
+    quote: "VisaVerse Immigration completely transformed our relocation experience. From assessment to flight ticket booking, their documentation assistance was flawless. We received our Canada PR in just 6 months!",
     name: "Amanpreet & Harleen Kaur",
     destination: "Migrated to Toronto, Canada",
     initials: "AH"
@@ -406,7 +406,7 @@ function App() {
         <div className="container nav-container">
           <a href="#" className="logo-link">
             <ShieldIcon />
-            <span>TerraFlex & Flyder</span>
+            <span><span>VisaVerse Immigration</span></span>
           </a>
 
           <div className={`nav-menu ${mobileMenuOpen ? 'open' : ''}`}>
@@ -512,7 +512,7 @@ function App() {
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Authorized Advisors</span>
-            <h2 className="section-title text-gradient">Why Relocate With TerraFlex & Flyder?</h2>
+            <h2 className="section-title text-gradient">Why Relocate With VisaVerse Immigration?</h2>
             <p className="section-desc">
               Immigration policies change rapidly. We provide legally compliant, stress-free advisory services backed by years of success.
             </p>
@@ -1080,7 +1080,7 @@ function App() {
             <div className="footer-brand">
               <a href="#" className="logo-link" style={{ fontSize: '1.5rem' }}>
                 <ShieldIcon />
-                <span>TerraFlex & Flyder</span>
+                <span>VisaVerse Immigration</span>
               </a>
               <p className="footer-desc">
                 Providing verified and strategic immigration consultation services for global workers, students, and businesses.
